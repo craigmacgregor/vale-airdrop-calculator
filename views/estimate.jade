@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+  p You entered your staking address as #{address}
+  p Since the start of the mining period at block #{blockStart} you've mined #{numBlocks} blocks.
+  p This means you're on track to receive approximately #{estimate} VALE at the public distribution event.
+
+  p Please note, this is only an estimate and will vary depending on your mining weight compared to the rest of the network over time.
+
+  a(href="/")
+   button(type="button") check another address
