@@ -18,7 +18,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'VALE Mining Estimator' });
+  res.render('index', { title: 'VALE Airdrop Estimator' });
 });
 
 /* GET home page. */
@@ -26,15 +26,15 @@ router.get('/estimate', function(req, res, next) {
   var address = req.query.address;
 
   if (!address) {
-    res.render('index', { title: 'No Address Provided' });
+    res.render('notfound', { title: 'VALE Airdrop Estimator' });
     return
   }
 
   BlockModel.find({address: address}).countDocuments().exec(function(err, numBlocks) {
     if (err) return handleError(err);
     if (numBlocks == 0) {
-      res.render('index', {
-        title: 'No Blocks or Invalid Address'
+      res.render('notfound', {
+        title: 'VALE Airdrop Estimator'
       });
       return;
     }
@@ -45,15 +45,17 @@ router.get('/estimate', function(req, res, next) {
 
       var estimate = config.VALE / totalBlocks * numBlocks;
 
-      var formatted = new Intl.NumberFormat('en-NZ', { style: "decimal" }).format(estimate);
+      var fmtEstimate = new Intl.NumberFormat('en-NZ', { style: "decimal" }).format(estimate);
+      var fmtBlockStart = new Intl.NumberFormat('en-NZ', { style: "decimal" }).format(config.blockStart);
+      var fmtNumBlocks = new Intl.NumberFormat('en-NZ', { style: "decimal" }).format(numBlocks);
 
       res.render('estimate', {
-        title: 'Your VALE Mining Estimate',
+        title: 'VALE Airdrop Estimator',
         address: address,
-        blockStart: config.blockStart,
-        numBlocks: numBlocks,
+        blockStart: fmtBlockStart,
+        numBlocks: fmtNumBlocks,
         latestBlock: latest[0].blockIndex,
-        estimate: formatted,
+        estimate: fmtEstimate,
       });
       return;
     })

@@ -1,8 +1,97 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1em;
+  font-weight: 300;
+  background-color: rgb(249,249,249);
 }
 
-a {
-  color: #00B7FF;
+h2 {
+  font-size: 1.4em;
+}
+
+h3 {
+  margin: 40px 0 0 0;
+  font-size: 2em;
+}
+
+p {
+  font-size: 1.2em;
+  line-height: 1.6em;
+  text-align: justify;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.montserrat {
+  font-family: 'Montserrat';
+  font-weight: 400;
+}
+
+.crimson {
+  font-family: 'Crimson Text', serif;
+  font-weight: 400;
+}
+
+.header {
+  background-image: url(/images/valence-background.png);
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  padding: 50px 0;
+}
+
+.header-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.body {
+  width: 100%;
+  padding: 50px 0;
+}
+
+.body-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.byline {
+  margin: -20px 0 0 0;
+}
+
+.input input {
+  line-height: 1.6em;
+  padding: 5px 10px;
+  width: 100%;
+  font-size: 1.2em;
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-size: 1.2em;
+  line-height: 1.6em;
+  margin-top: 20px;
+}
+
+.actions input {
+  margin-top: 10px;
+  padding: 5px 15px;
+  border-radius: 0.3em;
+  background-color: #aa99c6;
+  color: #FFF;
+  box-shadow: 0em 0.15em 0.65em 0em hsla(0,0%,0%,0);
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-size: 1.2em;
+  line-height: 1.6em;
+}
+
+.actions input:hover {
+
 }

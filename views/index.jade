@@ -1,13 +1,20 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .header
+    .header-content
+      image(src='/images/valence-logo.png')
+      h2.montserrat.byline BUSINESS ON THE BLOCKCHAIN
+      h3.crimson WELCOME TO THE VALENCE AIRDROP CALCULATOR
+      p 32 Million VALE will be split proportionally between addresses which participate in staking NAV from the start date (1 December 2018) until the public token distribution portal for Valence is launched.
+      p Enter your NAV staking address below and we will calculate your VALE airdrop estimate.
+      form(name="add-estimation", method="get", action="/estimate")
+        .input.montserrat
+          input(type="text", name="address" placeholder="NAV Address")
+        .actions.montserrat
+          input(type="submit", value="Get Estimate")
 
-  form(name="add-estimation", method="get", action="/estimate")
-    div.input
-      span.label NavCoin Staking Address&nbsp;
-      input(type="text", name="address" placeholder="NAV Address")
-      p
-    div.actions
-      input(type="submit", value="Get Estimate")
+  .body
+    .body-content
+      p Please note that this caluclator is an estimate only. As more or less NAV participate in mining over the course of the airdrop mining period, your estimated airdrop will fluctuate proportionally.
+      p For further information about the Valence Platform and the full details, terms and conditions of the airdrop please visit the #[a(href='https://valenceplatform.org' target='e') Valence Platform] website.

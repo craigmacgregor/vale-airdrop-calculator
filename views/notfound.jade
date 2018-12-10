@@ -5,13 +5,9 @@ block content
     .header-content
       image(src='/images/valence-logo.png')
       h2.montserrat.byline BUSINESS ON THE BLOCKCHAIN
-      h3.crimson YOUR VALENCE AIRDROP ESTIMATE
+      h3.crimson WE COULDN'T FIND THAT ADDRESS
 
-      p You are viewing the estimate for the staking address #[span.bold #{address}].
-      p Since the start of the VALE mining period (block #[span.bold #{blockStart}]) this address has mined #[span.bold #{numBlocks}] blocks.
-      p Based on the current participation, this address will receive approximately #[span.bold #{estimate}] VALE at the public distribution event as long as all the eligibility criteria are met.
-
-      p If you want to check another address, enter it below.
+      p The staking address you entered either doesn't exist, or it hasn't mined any blocks since the start of the airdrop period. If you want to check another address, enter it below.
       form(name="add-estimation", method="get", action="/estimate")
         .input.montserrat
           input(type="text", name="address" placeholder="NAV Address")
