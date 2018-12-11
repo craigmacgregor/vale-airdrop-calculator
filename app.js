@@ -24,9 +24,9 @@ setTimeout(blockController.scanBlockchain, 1000 * 60 * 5);
 var app = express();
 
 // Certificate
-const privateKey = fs.readFileSync('/etc/letsencrypt/live/valeairdrop.com/privkey.pem', 'utf8');
-const certificate = fs.readFileSync('/etc/letsencrypt/live/valeairdrop.com/cert.pem', 'utf8');
-const ca = fs.readFileSync('/etc/letsencrypt/live/valeairdrop.com/chain.pem', 'utf8');
+const privateKey = fs.readFileSync('/etc/letsencrypt/live/valeairdrop.org/privkey.pem', 'utf8');
+const certificate = fs.readFileSync('/etc/letsencrypt/live/valeairdrop.org/cert.pem', 'utf8');
+const ca = fs.readFileSync('/etc/letsencrypt/live/valeairdrop.org/chain.pem', 'utf8');
 
 const credentials = {
 	key: privateKey,
