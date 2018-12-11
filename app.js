@@ -41,6 +41,10 @@ httpServer.listen(80, () => {
 	console.log('HTTP Server running on port 80');
 });
 
+httpServer.get('*', function(req, res) {
+    res.redirect('https://' + req.headers.host + req.url);
+})
+
 httpsServer.listen(443, () => {
 	console.log('HTTPS Server running on port 443');
 });
