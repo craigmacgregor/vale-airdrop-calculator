@@ -19,6 +19,8 @@ setTimeout(blockController.scanBlockchain, 1000 * 60 * 5);
 
 var app = express();
 
+app.listen(80);
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
