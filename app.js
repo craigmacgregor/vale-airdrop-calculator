@@ -12,7 +12,6 @@ var blockController = require('./lib/blockController');
 const fs = require('fs');
 const http = require('http');
 const https = require('https');
-const express = require('express');
 
 //run this on a timer once its up to date
 
