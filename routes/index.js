@@ -40,7 +40,7 @@ router.get('/estimate', function(req, res, next) {
     }
     BlockModel.find().limit(1).sort({$natural:-1}).exec(function(err, latest) {
       if (err) return handleError(err);
-
+      var lastBlock = latest[0].blockIndex;
       var totalBlocks = latest[0].blockIndex - config.blockStart;
 
       var estimate = config.VALE / totalBlocks * numBlocks;
@@ -48,13 +48,14 @@ router.get('/estimate', function(req, res, next) {
       var fmtEstimate = new Intl.NumberFormat('en-NZ', { style: "decimal" }).format(estimate);
       var fmtBlockStart = new Intl.NumberFormat('en-NZ', { style: "decimal" }).format(config.blockStart);
       var fmtNumBlocks = new Intl.NumberFormat('en-NZ', { style: "decimal" }).format(numBlocks);
+      var fmtLastBlock = new Intl.NumberFormat('en-NZ', { style: "decimal" }).format(lastBlock);
 
       res.render('estimate', {
         title: 'VALE Airdrop Estimator',
         address: address,
         blockStart: fmtBlockStart,
         numBlocks: fmtNumBlocks,
-        latestBlock: latest[0].blockIndex,
+        latestBlock: fmtLastBlock,
         estimate: fmtEstimate,
       });
       return;
