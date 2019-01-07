@@ -19,7 +19,7 @@ const https = require('https');
 
 //scrape the blockchain to mongo db every 5 minutes
 blockController.scanBlockchain();
-setTimeout(blockController.scanBlockchain, 1000 * 60 * 5);
+setInterval(blockController.scanBlockchain, 1000 * 60 * 5);
 
 var app = express();
 
